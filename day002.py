@@ -1,18 +1,15 @@
-# SyntaxError: cannot assign to literal here.
-# "univ" = "Inha University"
-# 99 = 71
 
-#  ok
-abc = 7
-Abc = 8
-ABC = 6
-print(abc, ABC, Abc)
+x = 2
+y = (x + 10)
+y
+12
 
-test9 = 77
-9test = 77
-_9test = 71
-
-
+a = 7
+print(a)
+7
+b = a
+print(b)
+7
 
 
 
