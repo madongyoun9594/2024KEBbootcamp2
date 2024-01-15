@@ -1,15 +1,8 @@
-
-x = 2
-y = (x + 10)
-y
-12
-
-a = 7
-print(a)
-7
-b = a
-print(b)
-7
-
+artists = ['BTS', 'SES', 'HOT', '뉴진스']
+groups = artists
+artists[2] = '세븐틴'
+print(artists, groups)
+print(bool(0))
+print(+123)
 
 
