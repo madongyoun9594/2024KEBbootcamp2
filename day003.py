@@ -1,12 +1,17 @@
 # prime number
 number = int(input('Enter a number: '))
 is_prime = True
-i = 2
-while i < number:
-    if number % i == 0:
-        is_prime = False
-        break
-    i = i + 1
+
+
+if number < 2:
+    print('Not a prime number')
+else:
+    i = 2
+    while i < number:
+        if number % i == 0:
+            is_prime = False
+            break
+        i = i + 1
     # print(i, end='')
 
 # if cnt == 0:
