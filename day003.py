@@ -5,7 +5,9 @@ i = 2
 while i < number:
     if number % i == 0:
         cnt = cnt + 1
+        break
     i = i + 1
+    # print(i, end='')
 
 if cnt == 0:
             print(f'{number} is prime number')
