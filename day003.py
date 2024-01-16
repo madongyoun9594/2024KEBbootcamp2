@@ -1,32 +1,40 @@
-univ = "inha"
-i = 0
-while i < len(univ):
-    print(univ[i], end=' ')
-    i = i + 1
 # prime number
-number = int(input("Input number : "))
-is_prime = True
+numbers = input("Input first second number : ").split()
+n1=int(numbers[0])
+n2=int(numbers[1])
 
-print()
-if number < 2:
-    print(f'{number} is NOT prime number!')
-else:
-    for i in range(2, number):
-        if number % i == 0:
-            is_prime = False
-            break
+if n1 > n2:
+    n1, n2 = n2, n1
 
-for letter in univ:
-    print(letter, end=' ')
+for number in range(n1, n2+1):
+    is_prime = True
 
-print()
-
-#for k in range(0, len(univ), 1):
-#for k in range(0, len(univ)):
-for k in range(len(univ)):
-    print(univ[k], end=' ')
-    if is_prime:
-        print(f'{number} is prime number')
-    else:
+    if number < 2:
+        pass
         print(f'{number} is NOT prime number!')
+    else:
+        for i in range(2, number):
+            if number % i == 0:
+                is_prime = False
+                break
+        if is_prime: print(number, end=' ')
 
+
+
+
+#         i = i + 1
+# print()
+#
+#     if is_prime:
+#         print(f'{number} is prime number')
+#     else:
+#         print(f'{number} is NOT prime number!')
+# for letter in univ:
+#     print(letter, end=' ')
+#
+# print()
+#
+# #for k in range(0, len(univ), 1):
+# #for k in range(0, len(univ)):
+# for k in range(len(univ)):
+#     print(univ[k], end=' ')
