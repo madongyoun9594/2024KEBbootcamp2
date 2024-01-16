@@ -1,25 +1,16 @@
-# slicing
-# print(university[:4])
-# print(university[:-11])
-# print(len(university))
-# print(university[0:len(university)])
-# print(university[:16])
-# print(university[::2])
+subjects = ["pyton", "python", "java", "javascript"]
+subjects_string = ' / ' . join(subjects)
+print(subjects_string)
 
-    if menu == '1':
-        fahrenheit = float(input('Input Fahrenheit : '))
-        print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit-32.0)*5.0/9.0):.4f}C')
-    elif menu == '2':
-        celsius = float(input('Input Celsius : '))
-        print(f'Celsius : {celsius}C, Fahrenheit : {((celsius*9.0/5.0)+32.0):.4f}F')
-    elif menu == '3':
-        print('Terminate Program.')
-        break
-number1 = input("First number : ")
-number2 = input("Second number : ")
-print(number1 + number2)  # concatenation
-print(number1 * 3)  # duplicate
-print(number1 + 3)  # TypeError: can only concatenate str (not "int") to str
+numbers = input("FirstNumber SecondNumber: ").split()
+# print(numbers[0] + numbers[1]) # concatenation
+print(int(numbers[0]) + int(numbers[1])) # arithmetic operation
 
+
+# course = "2024 KEB bootcamp"
+# print(course)
+# # list_c = course.split(" ")
+# list_course = course.split('B')
+# print(list_course)
 
 
