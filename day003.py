@@ -10,14 +10,17 @@ for number in range(n1, n2+1):
     is_prime = True
 
     if number < 2:
-        pass
-        print(f'{number} is NOT prime number!')
+        # pass
+        continue
+
     else:
         for i in range(2, number):
             if number % i == 0:
                 is_prime = False
                 break
         if is_prime: print(number, end=' ')
+# 화씨 섭씨 3번메뉴 소수 판정 프로그램 4번 메뉴 구간 소수 프로그램
+# 연습문제 143쪽  1,2,3 깃허브
 
 
 
