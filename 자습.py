@@ -1,7 +1,7 @@
 
 e2f = dict(dog='chien', cat='chat', walrus='mors')
 f2e = {}
-for (영어, 프랑스어) in e2f.items():
+for 영어,프랑스어 in e2f.items():
     f2e[프랑스어] = 영어
 while True:
     menu = input( '1) e2f dict  2) f2e dict  3) quit : ')
