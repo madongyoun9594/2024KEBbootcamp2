@@ -1,9 +1,8 @@
-def out_func(nout):
-    def inner_func():
-        return nout * nout
-    return inner_func
+numbers = ["7", '-11', '3']
+print(sum(map(int, numbers)))
 
-x = out_func(9)
-print(type(x))
-print(x)
-print(x())
+# numbers = ["7", '-11', '3']
+# hap = 0
+# for number in numbers:
+#     hap = hap + int(number)
+# print(hap)
