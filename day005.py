@@ -16,20 +16,38 @@ def isprime(n) -> bool:
             i += 1
         return True
 
+while True:
+    menu = input("1) Fahrenheit -> Celsius   2) Celsius -> Fahrenheit   3) Prime Number  4) 구간설정 소수구하기  5) quit: ")
+
+    if menu == '1':
+        fahrenheit = float(input('Input Fahrenheit : '))
+        print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit-32.0)*5.0/9.0):.4f}C')
+    elif menu == '2':
+        celsius = float(input('Input Celsius : '))
+        print(f'Celsius : {celsius}C, Fahrenheit : {((celsius*9.0/5.0)+32.0):.4f}F')
+    elif menu == '3':
+        number = int(input('Enter a number: '))
+        if isprime(number):
+            print(f'{number} is prime number')
+        else:
+            print(f'{number} is NOT prime number')
+    elif menu == '4':
+        numbers = input("Input first second number : ").split()
+        n1 = int(numbers[0])
+        n2 = int(numbers[1])
+        if n1 > n2:
+            n1, n2 = n2, n1
+        for number in range(n1, n2 + 1):
+            if isprime(number):
+                 print(number, end=' ')
+        print()
+    else:
+        print('Terminate Program.')
+        break
 
 
 
 
-numbers = input("Input first second number : ").split()
-n1=int(numbers[0])
-n2=int(numbers[1])
-
-if n1 > n2:
-    n1, n2 = n2, n1
-
-for number in range(n1, n2+1):
-    if isprime(number):
-        print(number, end=' ')
 
 
 
