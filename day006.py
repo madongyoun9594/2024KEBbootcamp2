@@ -9,6 +9,9 @@ class SwimmingMixin:
 class Pokemon:
     def __init__(self, name):
         self.name = name
+    def attack(self):
+        print("공격!")
+
 class Charizard(Pokemon, FlyingMixin):
     pass
 
@@ -18,5 +21,12 @@ class Gyarados(Pokemon, SwimmingMixin):
 g1 = Gyarados("가랴도스")
 c1 = Charizard("리자몽")
 
-print(c1.fly())
-print(g1.swim())
+# print(c1.fly())
+# print(g1.swim())
+# c1.attack()
+# # Charizard.attack()  -> error
+# Charizard.attack(c1)
+print(g1.name)
+g1.name = "잉어킹"
+print(g1.name)
+
