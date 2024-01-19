@@ -1,36 +1,28 @@
-import random
+# class Pokemon():
+#     pass
+#
+#
+# pikachu = Pokemon()
+# squirtle = Pokemon()
+# pikachu.name = '피카츄'
+# pikachu.nemesis = squirtle
+# print(pikachu.name)
+# # print(pikachu.nemesis.name)
+# pikachu.nemesis.name = '꼬부기' # squirtle.name ='꼬부기'
+# print(pikachu.nemesis.name)
 
-class OoppsException(Exception):
-    pass
-
-
-# numbers = list()
-# for i in range(5):
-#     numbers.append(random.randint(1,100))
-numbers = [random.randint(1,100) for i in range(5)]
-print(numbers)
-
-try :
-    pick = int(input(f"Input index (0~{len(numbers)-1}) : "))
-    print(numbers[pick])
-    print(5/2)
-    raise OopsException("Oopps~~") # exception!
-except IndexError as err:
-    print(f"Wrong index number\n{err}")
-except ValueError as err:
-    print(f"Input Only Number~\n{err}")
-except ZeroDivisionError as err:
-    print(f"The denominator cannot be 0.\n{err}")
-except OoppsException as err:
-    print(f"Oops Oops\n{err}")
-except Exception as err:
-    print(f"Error occurs\n{err}")
-else:
-    print(f'Program terminate')
-
-# 순서대로 처리되기 때문에 범위가 작은 에러부터 차례대로 코드 작성
+class Pokemon:
+    def __init__(self, name):
+        self.name = name
+        print(f'{name} 포켓몬스터 생성')
+    def attack(self, target):
+        print(f'{self.name}이(가) {target.name}을(를) 공격!')
 
 
-
-
-
+charizard = Pokemon('리자몽')
+pikachu = Pokemon('피카츄')
+squirtle = Pokemon('꼬부기')
+charizard.attack(squirtle)
+print(pikachu.name)
+print(squirtle.name)
+print(charizard.name)
