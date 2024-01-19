@@ -1,16 +1,18 @@
-def get_odds(n):
+def test(f):
     """
-    1부터 n까지의 홀수를 발생시키는 제네레이터
-    :param n: int
-    :return: int
+    데코레이터 함수, 함수 시작하면 start 출력,, 함수 끝나면 end 출력
+    :param f: function
+    :return: closure function
     """
-    for i in range(1,n+1,2):
-        yield i
+    def test_inner(*args, **kwargs):
+        print('start')
+        # result = f(*args, **kwargs)
+        f()
+        print('end')
+        # return result
+    return test_inner
+def greeting():
+    print('hello')
+t = test(greeting)
+t()
 
-cnt = 0
-odds = get_odds(9)
-for odd in odds:
-    cnt = cnt + 1
-    if cnt == 3:
-        print(f'Third number is {odd}')
-        break
