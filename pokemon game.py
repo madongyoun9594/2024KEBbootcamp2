@@ -17,27 +17,3 @@ class Pokemon():
         self.pt = pt
         self.hp = hp
         self.pw = pw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
