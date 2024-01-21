@@ -67,7 +67,7 @@ def c1enemy_attack():
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
     elif number == 2:
-        print(f'{c1.name}이(가) {pa.attack2}을 사용하였다')
+        print(f'{c1.name}이(가) {ca.attack2}을 사용하였다')
         k.hp = k.hp - ca.attack2dam
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
