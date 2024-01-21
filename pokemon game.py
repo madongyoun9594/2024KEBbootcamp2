@@ -1,4 +1,10 @@
-import random
+def pikachu_attak():
+    menu = int(input("1) 전기쇼크 2) 십만볼트 3) 백만볼트 ")
+               if menu == 1:
+                   print('전기쇼크!')
+                    def
+
+
 
 
 class Pokemon():
@@ -7,12 +13,7 @@ class Pokemon():
         self.ty = ty
         self.hp = hp
         self.pw = pw
-    def attack(self):
-        menu_at = input("1) 약한공격 2) 필살기 ")
-        if menu_at =='1':
-            print(f"[]의 hp를 [] 깍았다.")
-        if menu_at =='2':
-            print(f"[]의 hp를 [] 깍았다")
+
 
 class Pikachu(Pokemon):
     pass
@@ -26,8 +27,12 @@ c1 = Charmander('리자몽','불','140','120')
 b1 = Bulbasaur("이상해씨",'풀','120','70')
 
 
+
+
+
+
 while True:
-    menu = int(input('1) POKEMON GAME START 2) QUIT : '))
+    menu = int(input('1) POKEMON GAME START 2) 나가기 : '))
     print()
     if menu == 1:
         print('환영합니다')
@@ -47,16 +52,33 @@ while True:
             print()
             print('무엇을 하시겠습니까? ')
             while True:
-                menu_ingame = int(input('1) 싸우기 :'))
+                menu_ingame = int(input('1) 이동하기 2) 쉬기 3) 나가기 :'))
+                print()
                 if menu_ingame == 1:
                     import random
-                    print(random.randint(1.3))
+                    num = random.randint(1,4)
+                    if num == 1:
+                            print('피카츄가 나타났다!')
+
+                    if num == 2:
+                            print('이상해씨가 나타났다!')
+                    if num == 3:
+                            print('리자몽이 나타났다!')
+                    if num == 4:
+                            print('주위에 포켓몬이 없다')
+                elif menu_ingame == 2:
+                    print()
+                elif menu_ingame == 3:
+                    print("종료하였습니다")
 
 
 
-        input('')
+
+
+
+
     elif menu == 2:
-        print("terminate")
+        print("종료하였습니다")
         break
     else:
         print('choose number 1 or 2')
