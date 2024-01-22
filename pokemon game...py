@@ -25,36 +25,34 @@ class Pokemon_attak(Pokemon):
         self.attack2 = attack2
         self.attack1dam = int(attack1dam)
         self.attack2dam = int(attack2dam)
-pa = Pokemon_attak("전기쇼크", '십만볼트','25','35')
-ca = Pokemon_attak("화염방사",'용의파동','35','50')
+pa = Pokemon_attak("전기쇼크", '십만볼트',25,35)
+ca = Pokemon_attak("화염방사",'용의파동',35,50)
 ba = Pokemon_attak("덩쿨채찍","씨폭탄",10,20)
 
 
 
 def attackf():
     print()
-    if menu == 1:
-        print('사용할 기술을 선택하세요')
+    menu_2 = int(input(f'1) {ka.attack1}  2) {ka.attack2} : '))
+    if menu_2 == 1:
         print()
-        menu_2 = int(input(f'1) {ka.attack1}, 2) {ka.attack2} : '))
+        print(f'{ka.attack1}!!')
+        return ka.attack1dam
+    elif menu_2 == 2:
         print()
-        if menu_2 == 1:
-            print(f'{ka.attack1}!!')
-            return ka.attack1
+        print(f'{ka.attack2}!!')
+        return ka.attack2dam
 
-        elif menu_2 == 2:
-            print(f'{ka.attack2}!!')
-            return ka.attack2
 def p1enemy_attack():
     import random
     number = random.randint(1,2)
     if number == 1:
-        print(f'{p1.name}이(가) {pa.attack1}을 사용하였다!')
+        print(f'{p1.name} 이(가) {pa.attack1}을 사용하였다!')
         k.hp = k.hp - pa.attack1dam
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
     elif number == 2:
-        print(f'{p1.name}이(가) {pa.attack2}을 사용하였다')
+        print(f'{p1.name} 이(가) {pa.attack2}을 사용하였다')
         k.hp = k.hp - pa.attack2dam
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
@@ -62,12 +60,12 @@ def c1enemy_attack():
     import random
     number = random.randint(1,2)
     if number == 1:
-        print(f'{c1.name}이(가) {ca.attack1}을(를) 사용하였다!')
+        print(f'{c1.name} 이(가) {ca.attack1}을(를) 사용하였다!')
         k.hp = k.hp - ca.attack1dam
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
     elif number == 2:
-        print(f'{c1.name}이(가) {ca.attack2}을 사용하였다')
+        print(f'{c1.name} 이(가) {ca.attack2}을 사용하였다')
         k.hp = k.hp - ca.attack2dam
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
@@ -80,7 +78,7 @@ def b1enemy_attack():
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
     elif number == 2:
-        print(f'{b1.name}이(가) {ba.attack2}을 사용하였다')
+        print(f'{b1.name} 이(가) {ba.attack2}을 사용하였다')
         k.hp = k.hp - ba.attack2dam
         print()
         print(f'{k.name}의 남은 체력: {k.hp}')
@@ -116,53 +114,52 @@ while True:
             print('무엇을 하시겠습니까? ')
             print()
             while True:
-                menu_ingame = int(input('1) 이동하기 2) 쉬기 3) 나가기 :'))
+                menu_ingame = int(input('1) 이동하기 2) 쉬기(회복) 3) 나가기 :'))
                 print()
                 if menu_ingame == 1:
                     import random
                     num = random.randint(1,4)
 
                     if num == 1:
-                         if k == p1:
-                            print('주위에 포켓몬이 없다')
-                            continue
+                            if k == p1:
+                                print('주위에 포켓몬이 없다')
+                                continue
 
 
-                         print(f'{p1.name}가 나타났다!')
-                         print()
-                         print(f'{p1.name}의 체력: {p1.hp} {p1.name}의 전투력: {p1.pw}')
-                         print()
-                         menu = int(input('1) 싸운다 2) 도망간다 :'))
-                         if menu == 1:
-                            while p1.hp > 0 or k.hp > 0:
-                                if k.hp < 0:
-                                    print('패배하였다')
-                                    quit()
+                            print(f'{p1.name}가 나타났다!')
+                            print()
+                            print(f'{p1.name}의 체력: {p1.hp} {p1.name}의 전투력: {p1.pw}')
+                            print()
+                            menu = int(input('1) 싸운다 2) 도망간다 :'))
+                            if menu == 1:
+                                while p1.hp > 0 or k.hp > 0:
+                                    if k.hp < 0:
+                                        print('패배하였다')
+                                        quit()
 
 
-
-                                attackf()
-                                if ka.attack1:
-                                    p1.hp = p1.hp - ka.attack1dam
-                                    print(f'{p1.name}의 남은 체력: {p1.hp}')
-                                    if p1.hp < 0:
-                                        print('승리하였다')
-                                        p1.hp = 100
-                                        break
-
-                                    elif ka.attack2:
-                                        p1.hp = p1.hp - pa.attack2dam
+                                    attackf()
+                                    if attackf() == ka.attack1dam:
+                                        p1.hp = p1.hp - ka.attack1dam
                                         print(f'{p1.name}의 남은 체력: {p1.hp}')
-                                        if p1.hp <0:
+                                        if p1.hp < 0:
+                                            print('승리하였다')
+                                            p1.hp = 100
+                                            break
+
+                                    elif attackf() == ka.attack2dam:
+                                        p1.hp = p1.hp - ka.attack2dam
+                                        print(f'{p1.name}의 남은 체력: {p1.hp}')
+                                        if p1.hp < 0:
                                             print("승리하였다")
                                             p1.hp = 100
                                             break
 
                                     p1enemy_attack()
 
-                         elif menu == 2:
-                            print()
-                            print(f'도망쳤습니다')
+                            elif menu == 2:
+                                print()
+                                print(f'도망쳤습니다')
 
 
 
@@ -177,27 +174,24 @@ while True:
                             menu = int(input('1) 싸운다 2) 도망간다 :'))
                             if menu == 1:
                                 while c1.hp > 0 or k.hp > 0:
-                                    if k.hp < 0:
+                                    if k.hp <= 0:
                                         print('패배하였다')
                                         quit()
-                                        break
                                     attackf()
-                                    if ka.attack1:
+                                    if attackf() == ka.attack1dam:
                                         c1.hp = c1.hp - ka.attack1dam
                                         print(f'{c1.name}의 남은 체력: {c1.hp}')
-                                        if c1.hp < 0:
+                                        if c1.hp <= 0:
                                             print('승리하였다')
                                             c1.hp = 140
                                             break
 
 
-                                    elif ka.attack2:
-                                        c1.hp = c1.hp - ca.attack2dam
+                                    elif attackf()== ka.attack2dam:
+                                        c1.hp = c1.hp - ka.attack2dam
                                         print(f'{c1.name}의 남은 체력: {c1.hp}')
-                                        if c1.hp < 0:
+                                        if c1.hp <= 0:
                                             print("승리하였다")
-                                            break
-
                                             c1.hp = 140
                                             break
 
@@ -218,26 +212,25 @@ while True:
                         menu = int(input('1) 싸운다 2) 도망간다 :'))
                         if menu == 1:
                             while b1.hp > 0 or k.hp > 0:
-                                if k.hp < 0:
+                                if k.hp <= 0:
                                     print('패배하였다')
                                     quit()
-                                    break
 
                                 attackf()
-                                if ka.attack1:
+                                if attackf() == ka.attack1dam:
                                     b1.hp = b1.hp - ka.attack1dam
                                     print(f'{b1.name}의 남은 체력: {b1.hp}')
 
-                                    if b1.hp < 0:
+                                    if b1.hp <= 0:
                                         print('승리하였다')
                                         b1.hp = 120
                                         break
 
 
-                                elif ka.attack2:
-                                    b1.hp = b1.hp - ba.attack2dam
+                                elif attackf() == ka.attack2dam:
+                                    b1.hp = b1.hp - ka.attack2dam
                                     print(f'{b1.name}의 남은 체력: {b1.hp}')
-                                    if b1.hp < 0:
+                                    if b1.hp <= 0:
                                         print("승리하였다")
                                         b1.hp = 120
                                         break
